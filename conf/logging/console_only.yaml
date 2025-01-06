@@ -1,0 +1,10 @@
+logger:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file_path: null
+
+hydra:
+  job_logging:
+    root:
+      handlers: [console]  # This will log to console only

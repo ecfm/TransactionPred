@@ -1,0 +1,15 @@
+train:
+    loss: l1
+    num_epochs: 1
+    patience: 5
+    optimizer: 
+        name: torch.optim.Adam  # Fully qualified name
+        params:
+            lr: 0.001
+            weight_decay: 0.0001
+    scheduler: 
+        name: torch.optim.lr_scheduler.ReduceLROnPlateau  # Fully qualified name
+        params:
+            mode: min
+            factor: 0.1
+            patience: 5

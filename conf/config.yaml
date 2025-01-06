@@ -1,0 +1,11 @@
+defaults:
+  - base
+  - models/transformer: hyperparams_small
+  - data: hyperparams
+  - _self_
+
+grid_search:
+  study_name: transformer_grid_search
+  n_trials: 100
+  direction: minimize
+  storage: sqlite:///outputs/optuna.db

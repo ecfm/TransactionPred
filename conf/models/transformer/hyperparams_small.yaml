@@ -1,0 +1,48 @@
+hyperparameters:
+  model:
+    d_model:
+      type: "int"
+      min: 32
+      max: 64
+    transformer:
+      nhead:
+        type: "int"
+        min: 2
+        max: 4
+      num_encoder_layers:
+        type: "int"
+        min: 1
+        max: 3
+      dropout:
+        type: "float"
+        min: 0.0
+        max: 0.3
+    encoders:
+      brand:
+        output_dim:
+          type: "int"
+          min: 16
+          max: 32
+    concat_layer:
+      n_layers:
+        type: "int"
+        min: 1
+        max: 3
+      hidden_dim:
+        type: "int"
+        min: 16
+        max: 128
+    max_seq_length:
+      type: "int"
+      min: 50
+      max: 100
+    dropout:
+      type: "float"
+      min: 0.0
+      max: 0.3
+
+  train:
+    learning_rate:
+      type: "loguniform"
+      min: 1e-4
+      max: 1e-2

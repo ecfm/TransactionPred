@@ -1,0 +1,9 @@
+mlflow:
+  storage:
+    type: "local"
+    path: "./mlruns"
+
+optuna:
+  storage:
+    type: "local"
+    path: "./optuna.db"

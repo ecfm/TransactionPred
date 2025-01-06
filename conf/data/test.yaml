@@ -1,0 +1,39 @@
+file_path: "data/raw/100_users_2019.csv"
+time_interval: '1W'
+data_loader:
+  batch_size: 32
+  num_workers: 4
+filters:
+  top_brands:
+    top_n: 5
+splits:
+  train: 0.7
+  val: 0.15
+  test: 0.15
+  overlap: 0.2
+input:
+  type: continuous_time
+  features:
+    - brand
+    - amount
+    - date
+output:
+  type: multi_hot_brand_amount
+  features:
+    - brand
+    - amount
+feature_processors:
+  brand:
+    type: brand_to_id
+  amount:
+    type: min_max_scaler
+  date:
+    type: time_delta
+cutoffs:
+  in_start: '2019-03-01'
+  train:
+    target_start: '2019-09-30'
+  val:
+    target_start: '2019-10-31'
+  test:
+    target_start: '2019-11-30'
